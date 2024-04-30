@@ -14,3 +14,8 @@ with pdfplumber.open(pdf_path) as pdf:
 
                 number_lines.append(line_content)
                 print(f'Line {line_number}: {line_content}')
+
+numbers = [int(x) for x in number_lines]
+total_sum = sum(numbers)
+
+print("\nTotal sum of values in PDF: " + str(total_sum))
