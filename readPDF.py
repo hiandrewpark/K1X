@@ -9,11 +9,11 @@ with pdfplumber.open(pdf_path) as pdf:
         text = page.extract_text()
         for line in text.split('\n'):
             # If the names of the line item is no longer "Line" but still follows the general rule of "Name x. ####"
-            found_numbers = re.findall(r'\d+', line)
+            print(line)
+            found_numbers = re.findall(r'^.*?\d+\.\s*(\d+)$', line) # If it no longer follows the general rule above and has a mix of string and number in the values
             if found_numbers:
-                number_lines.extend(map(int, found_numbers[1:]))
+                number_lines.extend(map(int, found_numbers))
 
-numbers = [int(x) for x in number_lines]
-total_sum = sum(numbers)
+total_sum = sum(number_lines)
 
 print("\nTotal sum of values in PDF: " + str(total_sum))
