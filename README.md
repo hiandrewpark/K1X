@@ -4,10 +4,10 @@ I am tasked with reading in a PDF from a local path and extracting the sum of th
 
 Form ####
 
-Line #. x
-Line #. x
-Line #. x
-etc.
+Line #. x  
+Line #. x  
+Line #. x  
+etc.  
 
 I must extract the x values and disregard the form and line numbers.
 
